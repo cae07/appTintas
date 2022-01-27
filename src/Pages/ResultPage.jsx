@@ -30,49 +30,7 @@ function ResultPage() {
 
   const windowSquare = 2.4;
   const doorSquare = 1.52;
-  const squareMeters = 10000;
-  // mantive a lata de 18 litros, mas baseado nas regras de negócio, não é necessário
-  const paintCansSize = [18, 3.6, 2.5, 0.5];
-
-  // useEffect para calcular quantos metros quadrados de parede existe para pintura
-  useEffect(() => {
-    const wallOne = (Number(heightOne) * Number(widthtOne)) / squareMeters;
-    const wallTwo = (Number(heightTwo) * Number(widthtTwo)) / squareMeters;
-    const wallThree = (Number(heightThree) * Number(widthtThree)) / squareMeters;
-    const wallFour = (Number(heightFour) * Number(widthtFour)) / squareMeters;
-
-    const sumAllWindows = (
-      Number(firstWindow) + Number(secondWindow) + Number(thirdWindow) + Number(fourthWindow)
-    ) * windowSquare;
-
-    const sumAllDoors = (
-      Number(firstDoor) + Number(secondDoor) + Number(thirdDoor) + Number(fourthDoor)
-    ) * doorSquare;
-
-    const squareTotal = (
-      (wallOne + wallTwo + wallThree + wallFour) - (sumAllWindows + sumAllDoors)
-    ).toFixed(2);
-
-    finalAnswer(squareTotal);    
-  }, []);
-
-  const VerifyTotalCans = (squareTotal) => {
-    const totalCans = [];
-    let totalPaint = squareTotal / 5;
-
-    paintCansSize.forEach((tin) => { // HOF para definir tamanhos de latas
-      if (tin < totalPaint) {
-        totalPaint -= tin;
-        totalCans.push(tin);
-      }
-      return null;
-    });
-    
-    if (totalPaint > 0) { // verificação se ainda existem partes sem pintar
-      totalCans.push(0.5);
-    }
-    return totalCans;
-  };
+  const squareMeters = 10000;  
 
   const VerifyQuantity = (allCans) => {
     const count = {};
@@ -88,14 +46,56 @@ function ResultPage() {
     return count;
   };
 
-  const finalAnswer = (squareTotal) => {
-    setTotalSquare(squareTotal); // seta a informação para mostrar na tela;
-    const totalPaint = VerifyTotalCans(squareTotal);
+  // useEffect para calcular quantos metros quadrados de parede existe para pintura
+  useEffect(() => {
+    const wallOne = (Number(heightOne) * Number(widthtOne)) / squareMeters;
+    const wallTwo = (Number(heightTwo) * Number(widthtTwo)) / squareMeters;
+    const wallThree = (Number(heightThree) * Number(widthtThree)) / squareMeters;
+    const wallFour = (Number(heightFour) * Number(widthtFour)) / squareMeters;
+    // mantive a lata de 18 litros, mas baseado nas regras de negócio, não é necessário
+    const paintCansSize = [18, 3.6, 2.5, 0.5];
 
-    const separatedCans = VerifyQuantity(totalPaint);
-    const keys = Object.entries(separatedCans);
-    setAllCans(keys);
-  };
+    const sumAllWindows = (
+      Number(firstWindow) + Number(secondWindow) + Number(thirdWindow) + Number(fourthWindow)
+    ) * windowSquare;
+
+    const sumAllDoors = (
+      Number(firstDoor) + Number(secondDoor) + Number(thirdDoor) + Number(fourthDoor)
+    ) * doorSquare;
+
+    const squareTotal = (
+      (wallOne + wallTwo + wallThree + wallFour) - (sumAllWindows + sumAllDoors)
+    ).toFixed(2);
+
+    const VerifyTotalCans = (squareTotal) => {
+      const totalCans = [];
+      let totalPaint = squareTotal / 5;
+  
+      paintCansSize.forEach((tin) => { // HOF para definir tamanhos de latas
+        if (tin < totalPaint) {
+          totalPaint -= tin;
+          totalCans.push(tin);
+        }
+        return null;
+      });
+      
+      if (totalPaint > 0) { // verificação se ainda existem partes sem pintar
+        totalCans.push(0.5);
+      }
+      return totalCans;
+    };
+
+    const finalAnswer = (squareTotal) => {
+      setTotalSquare(squareTotal); // seta a informação para mostrar na tela;
+      const totalPaint = VerifyTotalCans(squareTotal);
+  
+      const separatedCans = VerifyQuantity(totalPaint);
+      const keys = Object.entries(separatedCans);
+      setAllCans(keys);
+    };
+    finalAnswer(squareTotal);    
+  }, [firstDoor, firstWindow, fourthDoor, fourthWindow, heightFour, heightOne, heightThree, heightTwo, secondDoor, secondWindow, thirdDoor, thirdWindow, widthtFour, widthtOne, widthtThree, widthtTwo]);
+
 
   return (
     <section className="results-container page-container">
