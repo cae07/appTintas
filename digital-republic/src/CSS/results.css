@@ -1,0 +1,30 @@
+.results {
+  bottom: 10px;
+  display: flex;
+  max-height: 70vh;
+  position: absolute;
+}
+
+.results > h1 {
+  font-size: 2.1em;
+}
+
+.buy-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.buy-button > button {
+  bottom: 20px;
+  position: fixed;
+  background: none;
+  border-radius: 10px;
+  border-top: none;
+  border-left: none;
+  box-shadow: 4px 4px greenyellow;
+  color: green;
+  font-weight: 900;
+  height: 35px;
+  width: 150px;
+}

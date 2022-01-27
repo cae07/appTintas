@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  background-image: url('../images/fundo-app.jpeg');
+  background-size: cover;
+  margin: -50px 0 0 0;
+  min-height: 47vh;
+  max-height: 47vh;
+}
+
+.results {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer {
+  bottom: 0;
+  display: flex;
+  font-weight: 900;
+  justify-content: center;
+  padding: 5px;
+  position: fixed;
+}
+
+h1 {
+  background-image: 
+  linear-gradient(to right, #FF0000, #A020F0, #00FF00, #0000FF);
+  color: transparent;
+  display: flex;
+  font-size: 2.5em;
+  justify-content: center;
+  width: 54vh;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+h2 {
+  color: orangered;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
