@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, fireEvent } from '@testing-library/react'
-import renderWithRouter from './renderWithRouter';0
+import renderWithRouter from './renderWithRouter';
 import App from '../App';
 import '@testing-library/jest-dom'
 
@@ -12,11 +12,12 @@ describe('5- Verifica resposta', () => {
     const startButton = screen.getByRole('button', {
       name: 'começar',
     });
+    const { pathname } = location;
 
     fireEvent.change(input, { target: { value: 'Caê' } } );
     fireEvent.click(startButton);
 
-    expect(location.pathname).toBe('/firstWall');
+    expect(pathname).toBe('/firstWall');
 
     const heightInputOne = screen.getByTestId('height-input');
     const widthInputOne = screen.getByTestId('width-input');
@@ -28,7 +29,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.change(widthInputOne, { target: { value: 100} });
     fireEvent.click(nextButtonOne);
 
-    expect(location.pathname).toBe('/secondWall');
+    expect(pathname).toBe('/secondWall');
 
     const heightInputTwo = screen.getByTestId('height-input');
     const widthInputTwo = screen.getByTestId('width-input');
@@ -40,7 +41,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.change(widthInputTwo, { target: { value: 100} });
     fireEvent.click(nextButtonTwo);
 
-    expect(location.pathname).toBe('/thirdWall');
+    expect(pathname).toBe('/thirdWall');
     
     const heightInputThree = screen.getByTestId('height-input');
     const widthInputThree = screen.getByTestId('width-input');
@@ -52,7 +53,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.change(widthInputThree, { target: { value: 100} });
     fireEvent.click(nextButtonThree);
 
-    expect(location.pathname).toBe('/fourthWall');
+    expect(pathname).toBe('/fourthWall');
 
     const heightInputFour = screen.getByTestId('height-input');
     const widthInputFour = screen.getByTestId('width-input');
@@ -64,7 +65,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.change(widthInputFour, { target: { value: 100} });
     fireEvent.click(nextButtonFour);
 
-    expect(location.pathname).toBe('/result');
+    expect(pathname).toBe('/result');
 
     const nameText = screen.getByText('Olá Caê');
     const needText = screen.getByText('Você precisa de');
@@ -84,11 +85,12 @@ describe('5- Verifica resposta', () => {
     const startButton = screen.getByRole('button', {
       name: 'começar',
     });
+    const { pathname } = location;
 
     fireEvent.change(input, { target: { value: 'Caê' } } );
     fireEvent.click(startButton);
 
-    expect(location.pathname).toBe('/firstWall');
+    expect(pathname).toBe('/firstWall');
 
     const heightInputOne = screen.getByTestId('height-input');
     const widthInputOne = screen.getByTestId('width-input');
@@ -102,7 +104,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.click(windowsRadiosOne);
     fireEvent.click(nextButtonOne);
 
-    expect(location.pathname).toBe('/secondWall');
+    expect(pathname).toBe('/secondWall');
 
     const heightInputTwo = screen.getByTestId('height-input');
     const widthInputTwo = screen.getByTestId('width-input');
@@ -116,7 +118,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.click(windowsRadiosTwo);
     fireEvent.click(nextButtonTwo);
 
-    expect(location.pathname).toBe('/thirdWall');
+    expect(pathname).toBe('/thirdWall');
     
     const heightInputThree = screen.getByTestId('height-input');
     const widthInputThree = screen.getByTestId('width-input');
@@ -130,7 +132,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.click(doorsRadiosOne);
     fireEvent.click(nextButtonThree);
 
-    expect(location.pathname).toBe('/fourthWall');
+    expect(pathname).toBe('/fourthWall');
 
     const heightInputFour = screen.getByTestId('height-input');
     const widthInputFour = screen.getByTestId('width-input');
@@ -142,7 +144,7 @@ describe('5- Verifica resposta', () => {
     fireEvent.change(widthInputFour, { target: { value: 250} });
     fireEvent.click(nextButtonFour);
 
-    expect(location.pathname).toBe('/result');
+    expect(pathname).toBe('/result');
 
     const nameText = screen.getByText('Olá Caê');
     const needText = screen.getByText('Você precisa de');
