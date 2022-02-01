@@ -113,6 +113,7 @@ function ResultPage() {
           <button
             type="buton"
             onClick={ () => navigate('/contato') }
+            className="form-buttons"
           >
             COMPRAR
           </button>

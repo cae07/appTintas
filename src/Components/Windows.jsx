@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../CSS/radios.css'
 
 function Windows({ changeWindows }) {
   return (

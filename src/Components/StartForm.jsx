@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import myContext from '../Context/myContext';
-// import '../CSS/main.css';
 
 function StartForm() {
   const { name, setName } = useContext(myContext);
@@ -18,7 +17,7 @@ function StartForm() {
 
   return(
     <div className="main-form-container">
-      <form id="test">
+      <form>
         <label
           htmlFor="input-name"
           className="form-label"

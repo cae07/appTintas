@@ -7,7 +7,6 @@ import {
   VerifyThirdWallMesures,
   VerifyFourthWallMesures,
 } from '../Helpers/VerifyMesures';
-import '../CSS/forms.css';
 
 function NextButton() {
   const {

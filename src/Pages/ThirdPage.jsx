@@ -1,5 +1,6 @@
 import React from 'react';
 import { Footer, ThirdForm } from '../Components';
+import '../CSS/pages.css';
 
 function ThirdPage() {
   return (

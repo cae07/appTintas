@@ -3,7 +3,6 @@ import myContext from '../Context/myContext';
 import {
   Doors, HeightAndWidth, NextButton, Windows,
 } from './index';
-import '../CSS/wallForms.css';
 
 function SecondForm() {
   const {

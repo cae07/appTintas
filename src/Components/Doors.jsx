@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../CSS/radios.css';
 
 function Doors({ changeDoors }) {
   return (
