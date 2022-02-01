@@ -2,7 +2,7 @@ import React from 'react';
 
 function FirstHeader() {
   return (
-    <header>
+    <header className="test">
       <h2>Qual o seu nome?</h2>
     </header>
   );

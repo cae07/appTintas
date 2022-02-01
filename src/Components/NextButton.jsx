@@ -74,25 +74,25 @@ function NextButton() {
         const firstValidations = VerifyFirstWallMesures(
           heightOne, widthtOne, firstWindow, firstDoor, navigate
         );
-        if (firstValidations) return verifyValidations(firstValidations);
+        verifyValidations(firstValidations);
         break;
       case '/secondWall':
         const secondValidations = VerifySecondWallMesures(
           heightTwo, widthtTwo, secondWindow, secondDoor, navigate
         );
-        if (secondValidations) return verifyValidations(secondValidations);
+        verifyValidations(secondValidations);
         break;
       case '/thirdWall':
         const thirdValidations = VerifyThirdWallMesures(
           heightThree, widthtThree, thirdWindow, thirdDoor, navigate
         );
-        if (thirdValidations) return verifyValidations(thirdValidations);
+        verifyValidations(thirdValidations);
         break;
       case '/fourthWall':
         const fourthValidations = VerifyFourthWallMesures(
           heightFour, widthtFour, fourthWindow, fourthDoor, navigate
         );
-        if (fourthValidations) return verifyValidations(fourthValidations);
+        verifyValidations(fourthValidations);
         break;
       default:
         break;

@@ -8,7 +8,6 @@ import '../CSS/inputs.css'
 
 function HeightAndWidth({ handleFunctions }) {
   const { modal, setModal, textModal } = useContext(myContext);
-  console.log(textModal);
 
   const {
     handleHeight,
