@@ -38,6 +38,33 @@ function NextButton() {
   const errorDWAlert = 'O total de área das portas e janelas deve ser no máximo 50% da área de parede';
   const errorWallSize = 'A altura da parede que possui portas deve ser de no mínimo 220cm.'
 
+  const verifyValidations = (error) => {
+    switch (error) {
+      case 'maximumAlert':
+        setTextModal(maximumAlert);
+        setModal(true);
+        break;
+
+      case 'minimumAlert':
+        setTextModal(minimumAlert);
+        setModal(true);    
+        break;
+
+      case 'errorDWAlert':
+        setTextModal(errorDWAlert);
+        setModal(true);
+        break;
+    
+      case 'errorWallSize':
+        setTextModal(errorWallSize);
+        setModal(true);
+        break;
+    
+      default:
+        break;
+    }
+  };
+
   const handleClick = () => {
     switch (pathname) {
       case '/':
@@ -47,85 +74,25 @@ function NextButton() {
         const firstValidations = VerifyFirstWallMesures(
           heightOne, widthtOne, firstWindow, firstDoor, navigate
         );
-        if (firstValidations === 'maximumAlert') {
-          setTextModal(maximumAlert);
-          setModal(true);
-        };
-        if (firstValidations === 'minimumAlert') {
-          setTextModal(minimumAlert);
-          setModal(true);
-        };
-        if (firstValidations === 'errorDWAlert') {
-          setTextModal(errorDWAlert);
-          setModal(true);
-        }
-        if (firstValidations === 'errorWallSize') {
-          setTextModal(errorWallSize);
-          setModal(true);
-        }
+        if (firstValidations) return verifyValidations(firstValidations);
         break;
       case '/secondWall':
         const secondValidations = VerifySecondWallMesures(
           heightTwo, widthtTwo, secondWindow, secondDoor, navigate
         );
-        if (secondValidations === 'maximumAlert') {
-          setTextModal(maximumAlert);
-          setModal(true);
-        };
-        if (secondValidations === 'minimumAlert') {
-          setTextModal(minimumAlert);
-          setModal(true);
-        };
-        if (secondValidations === 'errorDWAlert') {
-          setTextModal(errorDWAlert);
-          setModal(true);
-        }
-        if (secondValidations === 'errorWallSize') {
-          setTextModal(errorWallSize);
-          setModal(true);
-        }
+        if (secondValidations) return verifyValidations(secondValidations);
         break;
       case '/thirdWall':
         const thirdValidations = VerifyThirdWallMesures(
           heightThree, widthtThree, thirdWindow, thirdDoor, navigate
         );
-        if (thirdValidations === 'maximumAlert') {
-          setTextModal(maximumAlert);
-          setModal(true);
-        };
-        if (thirdValidations === 'minimumAlert') {
-          setTextModal(minimumAlert);
-          setModal(true);
-        };
-        if (thirdValidations === 'errorDWAlert') {
-          setTextModal(errorDWAlert);
-          setModal(true);
-        }
-        if (thirdValidations === 'errorWallSize') {
-          setTextModal(errorWallSize);
-          setModal(true);
-        }
+        if (thirdValidations) return verifyValidations(thirdValidations);
         break;
       case '/fourthWall':
         const fourthValidations = VerifyFourthWallMesures(
           heightFour, widthtFour, fourthWindow, fourthDoor, navigate
         );
-        if (fourthValidations === 'maximumAlert') {
-          setTextModal(maximumAlert);
-          setModal(true);
-        };
-        if (fourthValidations === 'minimumAlert') {
-          setTextModal(minimumAlert);
-          setModal(true);
-        };
-        if (fourthValidations === 'errorDWAlert') {
-          setTextModal(errorDWAlert);
-          setModal(true);
-        }
-        if (fourthValidations === 'errorWallSize') {
-          setTextModal(errorWallSize);
-          setModal(true);
-        }
+        if (fourthValidations) return verifyValidations(fourthValidations);
         break;
       default:
         break;
