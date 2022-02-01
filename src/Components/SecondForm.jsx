@@ -41,8 +41,10 @@ function SecondForm() {
   return (
     <form className="walls-container">
       <HeightAndWidth handleFunctions={ handles } />
-      <Windows changeWindows={ changeWindows } />
-      <Doors changeDoors={ changeDoors } />
+      <div className="radios-container">
+        <Windows changeWindows={ changeWindows } />
+        <Doors changeDoors={ changeDoors } />
+      </div>
       <NextButton />
     </form>
   );

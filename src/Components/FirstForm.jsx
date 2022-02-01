@@ -3,7 +3,6 @@ import myContext from '../Context/myContext';
 import {
   Doors, HeightAndWidth, NextButton, Windows,
 } from './index';
-import '../CSS/wallForms.css';
 
 function FirstForms() {
   const {
@@ -41,8 +40,10 @@ function FirstForms() {
   return (
     <form className="walls-container">
       <HeightAndWidth handleFunctions={ handles } />
-      <Windows changeWindows={ changeWindows } />
-      <Doors changeDoors={ changeDoors } />
+      <div className="radios-container">
+        <Windows changeWindows={ changeWindows } />
+        <Doors changeDoors={ changeDoors } />
+      </div>
       <NextButton />
     </form>
   );

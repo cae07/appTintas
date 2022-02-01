@@ -4,7 +4,6 @@ import { useContext } from 'react';
 import myContext from '../Context/myContext';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
-import '../CSS/inputs.css'
 
 function HeightAndWidth({ handleFunctions }) {
   const { modal, setModal, textModal } = useContext(myContext);
