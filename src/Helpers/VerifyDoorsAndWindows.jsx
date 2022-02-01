@@ -1,24 +1,23 @@
-const errorDWAlert = 'O total de área das portas e janelas deve ser no máximo 50% da área de parede';
-const errorWallSize = 'A altura da parede que possui portas deve ser de no mínimo 220cm.'
+// const errorDWAlert = 'O total de área das portas e janelas deve ser no máximo 50% da área de parede';
+// const errorWallSize = 'A altura da parede que possui portas deve ser de no mínimo 220cm.'
 const windowSquare = 24000;
 const doorSquare = 15200;
 const minmunWallWithDoor = 220;
 
 const VerifyFirstDoorWindow = (heightOne, widthtOne, firstWindow, firstDoor, navigate) => {
+
   const firstWall = Math.ceil(Number(heightOne) * Number(widthtOne));
   const wallWindowOne = Math.ceil(Number(firstWindow)) * windowSquare;
   const wallDoorOne = Math.ceil(Number(firstDoor)) * doorSquare;
 
   if (firstDoor > 0) {
     if (heightOne < minmunWallWithDoor) {
-      alert(errorWallSize);
-      return navigate('/firstWall');
+      return 'errorWallSize';
     }
   }
 
   if ((wallWindowOne + wallDoorOne) > (firstWall / 2)) {
-    alert(errorDWAlert);
-    return navigate('/firstWall');
+    return 'errorDWAlert';
   }
 
   return navigate('/secondWall');
@@ -31,14 +30,12 @@ const VerifySecondDoorWindow = (heightTwo, widthtTwo, secondWindow, secondDoor, 
 
   if (secondDoor > 0) {
     if (heightTwo < minmunWallWithDoor) {
-      alert(errorWallSize);
-      return navigate('/secondWall');
+      return 'errorWallSize';
     }
   }
 
   if ((wallWindowTwo + wallDoorTwo) > (secondWall / 2)) {
-    alert(errorDWAlert);
-    return navigate('/secondWall');
+    return 'errorDWAlert';
   }
 
   return navigate('/thirdWall');
@@ -51,14 +48,12 @@ const VerifyThirdDoorWindow = (heightThree, widthtThree, thirdWindow, thirdDoor,
 
   if (thirdDoor > 0) {
     if (heightThree < minmunWallWithDoor) {
-      alert(errorWallSize);
-      return navigate('/thirdWall');
+      return 'errorWallSize';
     }
   }
 
   if ((wallWindowThree + wallDoorThree) > (thirdWall / 2)) {
-    alert(errorDWAlert);
-    return navigate('/thirdWall');
+    return 'errorDWAlert';
   }
 
   return navigate('/fourthWall');
@@ -71,14 +66,12 @@ const VerifyFourthDoorWindow = (heightFour, widthtFour, fourthWindow, fourthDoor
 
   if (fourthDoor > 0) {
     if (heightFour < minmunWallWithDoor) {
-      alert(errorWallSize);
-      return navigate('/fourthWall');
+      return 'errorWallSize';
     }
   }
 
   if ((wallWindowFour + wallDoorFour) > (fourthWall / 2)) {
-    alert(errorDWAlert);
-    return navigate('/fourthWall');
+    return 'errorDWAlert';
   }
 
   return navigate('/result');

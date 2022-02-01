@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, fireEvent } from '@testing-library/react'
-import renderWithRouter from './renderWithRouter';0
+import renderWithRouter from './renderWithRouter';
 import '@testing-library/jest-dom'
 import App from '../App';
 

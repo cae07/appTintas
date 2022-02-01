@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import myContext from '../Context/myContext';
+import Modal from 'react-bootstrap/Modal';
+import { Button } from 'react-bootstrap';
 import '../CSS/inputs.css'
 
 function HeightAndWidth({ handleFunctions }) {
+  const { modal, setModal, textModal } = useContext(myContext);
+  console.log(textModal);
+
   const {
     handleHeight,
     handleWidth,
@@ -13,6 +20,17 @@ function HeightAndWidth({ handleFunctions }) {
   return(
     <section className="inputs-container">
       <div className="unique-label">
+        <Modal show={ modal } onHide={ () => setModal(false) }>
+          <Modal.Header closeButton>
+            <Modal.Title>Erro!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{ textModal }</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={ () => setModal(false) }>
+              fechar
+            </Button>
+          </Modal.Footer>
+        </Modal>
         <label
           htmlFor="height"
         >

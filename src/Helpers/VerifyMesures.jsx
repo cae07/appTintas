@@ -8,63 +8,58 @@ import {
 
 const maximum = 150000;
 const minimun = 10000;
-const maximumAlert = 'A parede não pode ter mais que 15 metros quadrados.'
-const minimumAlert = 'A parede não pode ter menos que 1 metro quadrado.'
 
 const VerifyFirstWallMesures = (heightOne, widthtOne, firstWindow, firstDoor, navigate) => {
+
   const firstWall = Math.ceil(Number(heightOne) * Number(widthtOne));
   if (firstWall > maximum) {
-    alert(maximumAlert);
-    return navigate('/firstWall');
+    return 'maximumAlert';
   }
   if (firstWall < minimun) {
-    alert(minimumAlert);
-    return navigate('/firstWall');
+    return 'minimumAlert';
   }
 
-  VerifyFirstDoorWindow(heightOne, widthtOne, firstWindow, firstDoor, navigate);
+  const verifydoors = VerifyFirstDoorWindow(heightOne, widthtOne, firstWindow, firstDoor, navigate);
+  return verifydoors;
 };
 
 const VerifySecondWallMesures = (heightTwo, widthtTwo, secondWindow, secondDoor, navigate) => {
   const secondWall = Math.ceil(Number(heightTwo) * Number(widthtTwo));
   if (secondWall > maximum) {
-    alert(maximumAlert);
-    return navigate('/secondWall');
+    return 'maximumAlert';
   }
-  if (secondWall < minimun) {
-    alert(minimumAlert);
-    return navigate('/secondWall');
+  if (secondWall < minimun) {    
+    return 'minimumAlert';
   }
 
-  VerifySecondDoorWindow(heightTwo, widthtTwo, secondWindow, secondDoor, navigate);
+  const verifydoors = VerifySecondDoorWindow(heightTwo, widthtTwo, secondWindow, secondDoor, navigate);
+  return verifydoors;
 };
 
 const VerifyThirdWallMesures = (heightThree, widthtThree, thirdWindow, thirdDoor, navigate) => {
   const thirdWall = Math.ceil(Number(heightThree) * Number(widthtThree));
   if (thirdWall > maximum) {
-    alert(maximumAlert);
-    return navigate('/thirdWall');
+    return 'maximumAlert';
   }
-  if (thirdWall < minimun) {
-    alert(minimumAlert);
-    return navigate('/thirdWall');
+  if (thirdWall < minimun) {    
+    return 'minimumAlert';
   }
 
-  VerifyThirdDoorWindow(heightThree, widthtThree, thirdWindow, thirdDoor, navigate);
+  const verifydoors = VerifyThirdDoorWindow(heightThree, widthtThree, thirdWindow, thirdDoor, navigate);
+  return verifydoors;
 };
 
 const VerifyFourthWallMesures = (heightFour, widthtFour, fourthWindow, fourthDoor, navigate) => {
   const fourthWall = Math.ceil(Number(heightFour) * Number(widthtFour));
   if (fourthWall > maximum) {
-    alert(maximumAlert);
-    return navigate('/fourthWall');
+    return 'maximumAlert';
   }
   if (fourthWall < minimun) {
-    alert(minimumAlert);
-    return navigate('/fourthWall');
+    return 'minimumAlert';
   }
 
-  VerifyFourthDoorWindow(heightFour, widthtFour, fourthWindow, fourthDoor, navigate);
+  const verifydoors = VerifyFourthDoorWindow(heightFour, widthtFour, fourthWindow, fourthDoor, navigate);
+  return verifydoors;
 };
 
 export {

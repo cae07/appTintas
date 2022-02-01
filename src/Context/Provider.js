@@ -4,6 +4,8 @@ import myContext from './myContext';
 
 function Provider({ children }) {
   const [name, setName] = useState('');
+  const [modal, setModal] = useState(false);
+  const [textModal, setTextModal] = useState('');
 
   const [heightOne, setHeightOne] = useState('');
   const [heightTwo, setHeightTwo] = useState('');
@@ -30,6 +32,10 @@ function Provider({ children }) {
   const providerValue = {
     name,
     setName,
+    modal,
+    setModal,
+    textModal,
+    setTextModal,
     heightOne,
     setHeightOne,
     heightTwo,

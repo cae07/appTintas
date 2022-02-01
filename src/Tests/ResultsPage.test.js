@@ -69,8 +69,8 @@ describe('5- Verifica resposta', () => {
 
     const nameText = screen.getByText('Olá Caê');
     const needText = screen.getByText('Você precisa de');
-    const h2Text = screen.getByText('2 latas de 0.5l')
-    const finalText = screen.getByText('para colorir 4.00m².')
+    const h2Text = screen.getByText('2 latas de 0.5l');
+    const finalText = screen.getByText('para colorir 4.00m².');
 
     expect(nameText).toBeInTheDocument();
     expect(needText).toBeInTheDocument();
@@ -148,8 +148,8 @@ describe('5- Verifica resposta', () => {
 
     const nameText = screen.getByText('Olá Caê');
     const needText = screen.getByText('Você precisa de');
-    const h2TextOne = screen.getByText('1 lata de 3.6l')
-    const h2TextTwo = screen.getByText('1 lata de 0.5l')
+    const h2TextOne = screen.getByText('1 lata de 3.6l');
+    const h2TextTwo = screen.getByText('1 lata de 0.5l');
     const finalText = screen.getByText('para colorir 18.68m².')
 
     expect(nameText).toBeInTheDocument();
