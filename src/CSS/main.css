@@ -46,7 +46,7 @@
   font-weight: 900;
   justify-content: center;
   padding: 5px;
-  position: fixed;
+  position: absolute;
   width: 100%;
 }
 
