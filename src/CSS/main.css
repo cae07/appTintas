@@ -6,14 +6,13 @@
 .page-container {
   background-image: url('../images/fundo-app.jpeg');
   background-size: cover;
-  height: 48vh;
+  max-height: 48vh;
 }
 
 .start-page {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
 }
 
