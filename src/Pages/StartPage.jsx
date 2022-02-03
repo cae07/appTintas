@@ -6,9 +6,9 @@ function StartPage() {
   return (
     <div className="page-container">
       <div className="start-page">
+        <Footer />
         <FirstHeader />
         <StartForm />
-        <Footer />
       </div>
     </div>
   )
