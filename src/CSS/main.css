@@ -6,7 +6,8 @@
 .page-container {
   background-image: url('../images/fundo-app.jpeg');
   background-size: cover;
-  max-height: 48vh;
+  height: 48vh;
+  position: inherit;
 }
 
 .start-page {
